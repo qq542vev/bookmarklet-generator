@@ -12,11 +12,11 @@
 		<meta name="author" property="dc11:creator" content="風は風に" />
 		<meta name="copyright" property="dc11:rights" content="Copyright © 2019 風は風に. Some rights reserved." />
 		<meta name="dcterms.created" property="dcterms:created" datatype="dcterms:W3CDTF" content="2019-04-12" />
-		<meta name="dcterms.modified" property="dcterms:modified" datatype="dcterms:W3CDTF" content="2019-04-12" />
+		<meta name="dcterms.modified" property="dcterms:modified" datatype="dcterms:W3CDTF" content="2020-01-01" />
 		<meta name="keywords" property="schema:keywords" content="JavaScript,Bookmarklet,Generator" />
 		<meta name="msapplication-starturl" content="?" />
 		<meta name="robots" content="index,follow" />
-		<meta name="version" property="schema:version" content="0.1.0" />
+		<meta name="version" property="schema:version" content="0.1.2" />
 
 		<title property="dcterms:title">Bookmarklet Generator</title>
 
@@ -34,13 +34,13 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 		<!-- Load CodeMirror -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.css" />
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/mode/javascript/javascript.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
 
 		<!-- Load highlight.js -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css" />
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 
 		<!-- Load UglifyJS3 -->
 		<script type="text/javascript" src="UglifyJS2/lib/minify.js"></script>
@@ -201,7 +201,7 @@
 			 * @type {string}
 			 * @see https://purl.org/
 			 */
-			var purl = "https://purl.org/meta/utility/bookmarklet_generator/";
+			var purl = "https://purl.org/meta/bookmarklet-generator/";
 
 			/**
 			 * URI path sub delimiters.
@@ -250,16 +250,7 @@
 			var httpAjaxRequestOption = {
 				"crossDomain": true,
 				"timeout": 30000,
-				//"beforeSend": function() {
-				//	$("#status output").html("<em>Loading... <\/em>");
-				//},
-				"xhr": generateCORSRequest,
-				//"xhrFields": {
-				//	"onprogress": function(event) {
-				//		console.log(ajaxRequestTime);
-				//		$("#status output").html("<em>Loading... " + Math.floor(event.loaded / event.total * 100) + "%<\/em>");
-				//	}
-				//}
+				"xhr": generateCORSRequest
 			};
 
 			/**
@@ -397,7 +388,7 @@
 			function statusUpdate(content, date) {
 				date = date || new Date();
 
-				if(new Date($("#status time").text()).getTime() < date.getTime()) {
+				if(new Date($("#status time").text()).getTime() <= date.getTime()) {
 					$("#status output").empty().append(
 						content,
 						" ",
@@ -426,7 +417,6 @@
 				var name = $("#name").val() || "Bookmarkret";
 				var byteCount = numberFormat(utf8ByteCount(uri));
 				var formData = $("#mainForm").serializeArray();
-
 
 				if(statusUpdate([
 					$("<link />", {
@@ -530,24 +520,25 @@
 			}
 
 			/**
-			 * Output Messages (Error, Warning, Etc...).
+			 * Output Messages (Error, Warning, Date).
 			 *
 			 * @param {string} status - Status message
+			 * @param {array} warnings - Warning messages
+			 * @param {date} date - Date
 			 */
 
-			function outputMessage(status) {
-				var args = $.makeArray(arguments).slice(1);
+			function outputMessage(status, warnings, date) {
+				date = date || new Date();
+				var warnings = (warnings instanceof Array) ? warnings : [warnings];
 				var message = $("#message pre.message > samp");
 
-				$("#status output").empty().append(
-					$("<em><\/em>").append(status)
-				);
+				if(statusUpdate($("<em><\/em>").append(status), date)) {
+					$.each(warnings, function(key, value) {
+						$(message[key] || $("<samp><\/samp>").appendTo($("<pre class='message'><\/pre>").appendTo("#message"))).empty().append(value);
+					});
 
-				$.each(args, function(key, value) {
-					$(message[key] || $("<samp><\/samp>").appendTo($("<pre class='message'><\/pre>").appendTo("#message"))).empty().append(value);
-				});
-
-				message.slice(args.length).remove();
+					message.slice(warnings.length).remove();
+				}
 			}
 
 			/**
@@ -613,10 +604,7 @@
 			/**
 			 * Callback function when Ajax done.
 			 */
-			function ajaxDone(data, textStatus, jqXHR, ) {
-				console.log(this);
-				console.log(jqXHR);
-
+			function ajaxDone(data, textStatus, jqXHR, ajaxRequestTime) {
 				outputBookmarklet(data, this.data.js_code, ajaxRequestTime);
 			}
 
@@ -624,27 +612,26 @@
 			 * Callback function when Ajax fail.
 			 */
 			function ajaxFail(jqXHR, textStatus, errorThrown, ajaxRequestTime) {
+				var warnings = [];
+
 				if(jqXHR.status) {
-					var code = $("<code class='http'><\/code>").text(
+					var status = "HTTP Response Error";
+					warnings.push($("<code class='http'><\/code>").text(
 						[
 							["HTTP", jqXHR.status, jqXHR.statusText].join(" "),
 							jqXHR.getAllResponseHeaders(),
 							jqXHR.responseText
 						].join("\r\n")
-					);
-
-					outputMessage("HTTP Response Error", code);
-
-					hljs.highlightBlock(code[0]);
+					));
 				} else {
-					outputMessage(textStatus);
+					var status = textStatus;
 				}
 
 				if(errorThrown.message) {
-					$("<pre title='Error Message'><\/pre>").append(
-						$("<samp><\/samp>").text(errorThrown.message)
-					).appendTo("#output");
+					warnings.push(errorThrown.message);
 				}
+
+				outputMessage(status, warnings, ajaxRequestTime);
 			}
 
 			/**
@@ -673,9 +660,9 @@
 							}
 						}
 					})).done(function(data, textStatus, jqXHR) {
-						ajaxDone(data, textStatus, jqXHR, ajaxRequestTime);
+						$.proxy(ajaxDone, this, data, textStatus, jqXHR, ajaxRequestTime)();
 					}).fail(function(jqXHR, textStatus, errorThrown) {
-						ajaxFail(jqXHR, textStatus, errorThrown, ajaxRequestTime);
+						$.proxy(ajaxFail, this, jqXHR, textStatus, errorThrown, ajaxRequestTime)();
 					});
 				} else {
 					var minifiedJsCode = minify(jsCode);
@@ -979,8 +966,8 @@
 				<ul id="footerNavigation">
 					<li><a title="Bookmarklet Template" href="?js_code=%28function%28%29+%7B%0D%0A++++%0D%0A%0D%0A%0D%0A%7D%29%28%29%3B&amp;optimize=cc_SIMPLE_OPTIMIZATIONS">Template</a></li>
 					<li id="bookmarkletThisTool"><a href="?js_code=%28function%28document%2C+location%29+%7B%0D%0A++++function+formUrlEncode%28str%29+%7B%0D%0A++++++++return+encodeURIComponent%28str%29.replace%28%2F%5B%7E%21%27%28%29%5D%2Fg%2C+function%28c%29+%7B%0D%0A++++++++++++return+%22%25%22+%2B+c.charCodeAt%280%29.toString%2816%29%3B%0D%0A++++++++%7D%29.replace%28%2F%2520%2Fg%2C+%22%2B%22%29%3B%0D%0A++++%7D%0D%0A%0D%0A++++var+url+%3D+%22https%3A%2F%2Fpurl.org%2Fmeta%2Futility%2Fbookmarklet_generator%2F%22%3B%0D%0A++++var+query+%3D+url+%2B+%22%3Fjs_code%3D%22%3B%0D%0A++++var+active+%3D+document.activeElement+%3F+document.activeElement+%3A+document.body%3B%0D%0A++++var+ahref+%3D+active.href+%3F+active.href+%3A+%22%22%3B%0D%0A++++var+select+%3D+document.getSelection+%3F+document.getSelection%28%29.toString%28%29.replace%28%2F%5E%5B%5Cs%5CuFEFF%5CxA0%5D%2B%7C%5B%5Cs%5CuFEFF%5CxA0%5D%2B%24%2Fg%2C+%22%22%29+%3A+%22%22%3B%0D%0A++++var+pattern+%3D+%2F%5Ejavascript%3A%28%5Cw%7C%5B%5C-.%7E%21%24%26%27%28%29*%2B%2C%3B%3D%3A%40%5D%7C%25%5B0-9A-F%5D%7B2%7D%29%2B%24%2Fi%3B%0D%0A%0D%0A++++if%28active.tagName.toLowerCase%28%29+%3D%3D%3D+%22a%22+%26%26+pattern.test%28ahref%29%29+%7B%0D%0A++++++++location.href+%3D+query+%2B+ahref.substring%2811%29+%2B+%28active.title+%3F+%22%26name%3D%22+%2B+formUrlEncode%28active.title%29+%3A+%22%22%29%3B%0D%0A++++%7D+else+if%28pattern.test%28select%29%29+%7B%0D%0A++++++++location.href+%3D+query+%2B+select.substring%2811%29%3B%0D%0A++++%7D+else+if%28select%29+%7B%0D%0A++++++++location.href+%3D+query+%2B+formUrlEncode%28select%29%3B%0D%0A++++%7D+else+%7B%0D%0A++++++++location.href+%3D+url%3B%0D%0A++++%7D%0D%0A%7D%29%28document%2C+location%29%3B&amp;name=Bookmarklet+Generator&amp;optimize=cc_SIMPLE_OPTIMIZATIONS">Bookmarklet this tool</a></li>
-					<li id="download"><a href="https://purl.org/meta/utility/bookmarklet_generator/download">Download</a></li>
-					<li id="updateCheck"><a type="text/javascript" href="https://purl.org/meta/utility/bookmarklet_generator/scripts/version.js">Update check</a></li>
+					<li id="download"><a href="https://purl.org/meta/bookmarklet-generator/download">Download</a></li>
+					<li id="updateCheck"><a type="text/javascript" href="https://purl.org/meta/bookmarklet-generator/version.js">Update check</a></li>
 				</ul>
 			</nav>
 
