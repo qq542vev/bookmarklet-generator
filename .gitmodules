@@ -1,4 +1,0 @@
-[submodule "UglifyJS2"]
-	path = UglifyJS2
-	url = https://github.com/mishoo/UglifyJS2.git
-	branch = master

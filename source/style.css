@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@import url("../node_modules/normalize.css/normalize.css");
+@import url("../node_modules/codemirror/lib/codemirror.css");
+
+/** File: style.css
+ *
+ * 「Bookmarklet Generator」用のスタイルシート
+ *
+ * Metadata:
+ *
+ *   id - 908863f3-0eea-49db-a0c1-513a0b93ddd1
+ *   author - <qq542vev at https://purl.org/meta/me/>
+ *   version - 1.0.0
+ *   date - 2023-03-13
+ *   since - 2023-03-13
+ *   copyright - Copyright (C) 2023-2023 qq542vev. Some rights reserved.
+ *   license - <CC-BY at https://creativecommons.org/licenses/by/4.0/>
+ *   package - bookmarklet-generator
+ *
+ * See Also:
+ *
+ *   * <Project homepage at https://github.com/qq542vev/bookmarklet-generator>
+ *   * <Bug report at https://github.com/qq542vev/bookmarklet-generator/issues>
+ */
+
+body {
+	width: 95%;
+	margin: 0 auto;
+	margin: 15px auto;
+	line-height: 1.6;
+}
+
+textarea:focus, input:focus {
+	background: #FFFFE8;
+}
+
+h1, caption, thead {
+	display: none;
+}
+
+#output pre {
+	border: 1px solid #666666;
+	padding: 0.5em;
+	background: #F0F0F0;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+pre, code, var, samp, kbd {
+	font-family: "Source Code Pro", "Ubuntu Mono", "Consolas", "Inconsolata", "Menlo", "Courier New", "Courier", "Bitstream Vera Sans Mono", "Monaco", monospace, sans-serif;
+}
+
+#mainForm {
+	position: relative;
+}
+
+#js_code, .CodeMirror {
+	ime-mode: inactive;
+	font-family: "Source Code Pro", "Ubuntu Mono", "Consolas", "Inconsolata", "Menlo", "Courier New", "Courier", "Bitstream Vera Sans Mono", "Monaco", monospace, sans-serif;
+}
+
+#js_code {
+	width: 100%;
+	white-space: pre;
+}
+
+#name {
+	width: 12em;
+}
+
+#submit {
+	float: left;
+	padding: 0;
+	margin-top: 0;
+}
+
+#status {
+	float: left;
+	padding: 0;
+	margin-top: 0;
+	margin-left: 1em;
+}
+
+.checkbox_item {
+	display: inline-block;
+	margin: 0.2em;
+	padding: 0 0.2em;
+	background: #F0F0F0;
+	cursor: pointer;
+}
+
+.checkbox_item input {
+	cursor: pointer;
+}
+
+#option {
+	clear: both;
+}
+
+#menu {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	margin: 0;
+	padding: 0;
+	z-index: 1000;
+	list-style: none;
+}
+
+#purl, #run, #clear {
+	background: #FFFFFF;
+	border: 1px solid #C0C0C0;
+	margin: 0.2em 0;
+	padding: 0.2em 0.3em;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.message {
+	border: 1px solid #FFC0CB;
+	padding: 0.3em;
+	background: #FFF4F6;
+}
+
+#footerNavigation {
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#footerNavigation li {
+	display: inline;
+	margin: 0 0.5em;
+}
+
+.delimiter {
+	color: #000000;
+}
+
+.scheme {
+	color: #FF0000;
+}
+
+.path {
+}
+
+.sub-delimiter {
+	color: #880000;
+}
+
+.percent-encoded {
+	color: #397300;
+}
+
+.cm-trailingspace {
+	text-decoration: #FF0000 wavy underline;
+}
+
+@media print {
+	#submit, #status, #menu, #option, #footerNavigation {
+		display: none;
+	}
+}

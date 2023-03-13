@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+	about=""
+	typeof="schema:SoftwareApplication"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="application-name" content="Bookmarklet Generator" />
+		<meta name="author" property="dc11:creator" content="qq542vev" />
+		<meta name="copyright" property="dc11:rights" content="Copyright © 2019-2023 qq542vev. Some rights reserved." />
+		<meta name="dcterms.created" property="dcterms:created" datatype="dcterms:W3CDTF" content="2019-04-12" />
+		<meta name="dcterms.modified" property="dcterms:modified" datatype="dcterms:W3CDTF" content="2020-01-01" />
+		<meta name="keywords" property="schema:keywords" content="JavaScript,Bookmarklet,Generator" />
+		<meta name="msapplication-starturl" content="?" />
+		<meta name="robots" content="index,follow" />
+		<meta name="version" property="schema:version" content="1.0.0" />
+
+		<title property="dcterms:title">Bookmarklet Generator Version 1.0.0</title>
+
+		<link rel="author dcterms:creator" href="https://purl.org/meta/me/" />
+		<link rel="start" title="Start page" href="?" />
+		<link rel="copyright license" title="Creative Commons License" href="https://creativecommons.org/licenses/by/4.0/" />
+		<link rel="dcterms:conformsTo" title="Valid HTML+RDFa 1.1" href="http://www.w3.org/TR/html-rdfa/" />
+		<link rel="profile grddl:profileTransformation" href="http://ns.inria.fr/grddl/rdfa/" />
+		<link rel="sidebar" href="javascript:" title="Bookmarkret" />
+		<link rel="stylesheet" type="text/css" href="minified/style.css" />
+
+		<script type="text/javascript" src="minified/main.js"></script>
+	</head>
+	<body role="application">
+		<main>
+			<section id="input" rel="dcterms:hasPart" resource="#input">
+				<h1 property="dcterms:title">Input JavaScript Code</h1>
+
+				<form id="mainForm" action="?" method="GET" accept-charset="UTF-8">
+					<p><textarea id="code" name="code" cols="72" rows="24" autofocus="autofocus" placeholder="Enter JavaScript code for Bookmarklet." title="JavaScript code for bookmarklet.">Please enable JavaScript to use the feature.</textarea></p>
+
+					<p id="submit">
+						<input id="name" type="text" name="name" placeholder="Bookmarklet Name" title="Bookmarklet Name" />
+						<select id="optimize" name="optimize" title="Optimize Level">
+							<option value="no" selected="selected">No optimization</option>
+							<option value="uglifyjs">UglifyJS2</option>
+						</select>
+					</p>
+
+					<p id="status" role="status" about="[_:bookmarklet]" typeof="schema:SoftwareApplication"><output><strong><a rel="sidebar" href="javascript:" title="Bookmarkret" property="dcterms:title">Bookmarkret</a></strong> - <span property="schema:fileSize">11 Bytes</span></output></p>
+
+					<ul id="menu">
+						<li><button id="run" type="button" title="Run JavaScript Code">▶</button></li>
+						<li><button id="purl" type="button" title="Persistent URL">✩</button></li>
+						<li><button id="clear" type="button" title="Form Reset">×</button></li>
+					</ul>
+
+					<table id="option">
+						<caption>More Options</caption>
+						<thead>
+							<tr>
+								<th scope="col">Option Name</th>
+								<th scope="col">Option Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="unencode_characters">
+								<th scope="row">Unencode characters</th>
+								<td>
+									<label class="checkbox_item" for="unencode_exclamation_mark" title="Exclamation mark">
+										<input id="unencode_exclamation_mark" type="checkbox" name="unencode_exclamation_mark" value="1" />
+										<code>!</code>
+									</label>
+									<label class="checkbox_item" for="unencode_dollar_sign" title="Dollar sign">
+										<input id="unencode_dollar_sign" type="checkbox" name="unencode_dollar_sign" value="1" />
+										<code>$</code>
+									</label>
+									<label class="checkbox_item" for="unencode_ampersand" title="Ampersand">
+										<input id="unencode_ampersand" type="checkbox" name="unencode_ampersand" value="1" />
+										<code>&amp;</code>
+									</label>
+									<label class="checkbox_item" for="unencode_apostrophe" title="Apostrophe">
+										<input id="unencode_apostrophe" type="checkbox" name="unencode_apostrophe" value="1" />
+										<code>'</code>
+									</label>
+									<label class="checkbox_item" for="unencode_left_parenthesis" title="Left parenthesis">
+										<input id="unencode_left_parenthesis" type="checkbox" name="unencode_left_parenthesis" value="1" />
+										<code>(</code>
+									</label>
+									<label class="checkbox_item" for="unencode_right_parenthesis" title="Right parenthesis">
+										<input id="unencode_right_parenthesis" type="checkbox" name="unencode_right_parenthesis" value="1" />
+										<code>)</code>
+									</label>
+									<label class="checkbox_item" for="unencode_asterisk" title="Asterisk">
+										<input id="unencode_asterisk" type="checkbox" name="unencode_asterisk" value="1" />
+										<code>*</code>
+									</label>
+									<label class="checkbox_item" for="unencode_plus_sign" title="Plus sign">
+										<input id="unencode_plus_sign" type="checkbox" name="unencode_plus_sign" value="1" />
+										<code>+</code>
+									</label>
+									<label class="checkbox_item" for="unencode_comma" title="Comma">
+										<input id="unencode_comma" type="checkbox" name="unencode_comma" value="1" />
+										<code>,</code>
+									</label>
+									<label class="checkbox_item" for="unencode_semicolon" title="Semicolon">
+										<input id="unencode_semicolon" type="checkbox" name="unencode_semicolon" value="1" />
+										<code>;</code>
+									</label>
+									<label class="checkbox_item" for="unencode_equals_sign" title="Equals sign">
+										<input id="unencode_equals_sign" type="checkbox" name="unencode_equals_sign" value="1" />
+										<code>=</code>
+									</label>
+									<label class="checkbox_item" for="unencode_colon" title="Colon">
+										<input id="unencode_colon" type="checkbox" name="unencode_colon" value="1" />
+										<code>:</code>
+									</label>
+									<label class="checkbox_item" for="unencode_commercial_at" title="Commercial at">
+										<input id="unencode_commercial_at" type="checkbox" name="unencode_commercial_at" value="1" />
+										<code>@</code>
+									</label>
+									<label class="checkbox_item" for="unencode_iri_characters" title="IRI Characters">
+										<input id="unencode_iri_characters" type="checkbox" name="unencode_iri_characters" value="1" />
+										<abbr title="Internationalized Resource Identifiers">IRI</abbr> Characters
+									</label>
+									<button id="toggle" type="button" title="All check or all uncheck">toggle☑</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</section>
+			<section id="messages" rel="dcterms:hasPart" resource="#messages">
+				<h1 property="dcterms:title">Messages</h1>
+			</section>
+			<section id="output" rel="dcterms:hasPart" resource="#output">
+				<h1 property="dcterms:title">Output Bookmarklet</h1>
+
+				<pre id="bookmarkletURI"><code class="iri"><span class="scheme">javascript<span class="delimiter">:</span></span><output form="mainForm" class="path"></output></code></pre>
+
+				<table id="moreOutputCode">
+					<caption>More Output Codes</caption>
+					<tbody>
+						<tr>
+							<th scope="row">HTML Code (normal)</th>
+							<td title="HTML Code (normal)">
+								<pre id="normalHtmlCode"><code class="html"><output form="mainForm">&lt;a href="javascript:"&gt;Bookmarklet&lt;/a&gt;</output></code></pre>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">HTML Code (extended)</th>
+							<td title="HTML Code (extended)">
+								<pre id="extendedHtmlCode"><code class="html"><output form="mainForm">&lt;a rel="sidebar" href="javascript:" onclick="(function(t,w){var e=w.external,s=w.sidebar;if(e&amp;&amp;e.AddFavorite){e.AddFavorite(t.href,t.title);}else if(s&amp;&amp;s.addPanel){s.addPanel(t.title,t.href,'');};return false;})(this,window);"&gt;Bookmarklet&lt;/a&gt;</output></code></pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+		<footer>
+			<nav>
+				<ul id="footerNavigation">
+					<li id="repository"><a href="https://github.com/qq542vev/bookmarklet-generator">Repository</a></li>
+					<li id="download"><a href="https://purl.org/meta/bookmarklet-generator/download">Download</a></li>
+					<li id="license"><a href="https://purl.org/meta/bookmarklet-generator/LICENSE">License</a></li>
+				</ul>
+			</nav>
+
+			<p id="copyright"><small>Copyright © 2019-2023 qq542vev. Some rights reserved.</small></p>
+		</footer>
+	</body>
+</html>
