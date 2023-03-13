@@ -6,7 +6,7 @@
 
 		id - 6ed745e6-ba1a-4d85-8bdb-046d72d04f51
 		author - <qq542vev at https://purl.org/meta/me/>
-		version - 1.0.0
+		version - 0.0.1
 		date - 2023-03-13
 		since - 2020-04-20
 		copyright - Copyright (C) 2020-2023 qq542vev. Some rights reserved.
