@@ -17,6 +17,7 @@
 		<meta name="msapplication-starturl" content="?" />
 		<meta name="robots" content="index,follow" />
 		<meta name="version" property="schema:version" content="1.0.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<title property="dcterms:title">Bookmarklet Generator Version 1.0.0</title>
 
@@ -36,7 +37,7 @@
 				<h1 property="dcterms:title">Input JavaScript Code</h1>
 
 				<form id="mainForm" action="?" method="GET" accept-charset="UTF-8">
-					<p><textarea id="code" name="code" cols="72" rows="24" autofocus="autofocus" placeholder="Enter JavaScript code for Bookmarklet." title="JavaScript code for bookmarklet.">Please enable JavaScript to use the feature.</textarea></p>
+					<div id="textarea"><textarea id="code" name="code" cols="72" rows="24" autofocus="autofocus" placeholder="Enter JavaScript code for Bookmarklet." title="JavaScript code for bookmarklet.">Please enable JavaScript to use the feature.</textarea></div>
 
 					<p id="submit">
 						<input id="name" type="text" name="name" placeholder="Bookmarklet Name" title="Bookmarklet Name" />
@@ -49,9 +50,9 @@
 					<p id="status" role="status" about="[_:bookmarklet]" typeof="schema:SoftwareApplication"><output><strong><a rel="sidebar" href="javascript:" title="Bookmarkret" property="dcterms:title">Bookmarkret</a></strong> - <span property="schema:fileSize">11 Bytes</span></output></p>
 
 					<ul id="menu">
-						<li><button id="run" type="button" title="Run JavaScript Code">▶</button></li>
-						<li><button id="purl" type="button" title="Persistent URL">✩</button></li>
-						<li><button id="clear" type="button" title="Form Reset">×</button></li>
+						<li><button id="run" type="button" title="Run JavaScript Code"><img alt="&#x25B6;&#xFE0E;" src="minified/25B6.svg" /></button></li>
+						<li><button id="purl" type="button" title="Persistent URL"><img alt="&#x1F517;" src="minified/1F517.svg" /></button></li>
+						<li><button id="clear" type="button" title="Form Reset"><img alt="&#x274C;" src="minified/274C.svg" /></button></li>
 					</ul>
 
 					<table id="option">

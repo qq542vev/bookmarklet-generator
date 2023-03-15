@@ -11,7 +11,7 @@
  *   id - 908863f3-0eea-49db-a0c1-513a0b93ddd1
  *   author - <qq542vev at https://purl.org/meta/me/>
  *   version - 1.0.0
- *   date - 2023-03-13
+ *   date - 2023-03-16
  *   since - 2023-03-13
  *   copyright - Copyright (C) 2023-2023 qq542vev. Some rights reserved.
  *   license - <CC-BY at https://creativecommons.org/licenses/by/4.0/>
@@ -54,12 +54,16 @@ pre, code, var, samp, kbd {
 	position: relative;
 }
 
-#js_code, .CodeMirror {
+#textalea {
+	margin-bottom: 0.85em;
+}
+
+#code, .CodeMirror {
 	ime-mode: inactive;
 	font-family: "Source Code Pro", "Ubuntu Mono", "Consolas", "Inconsolata", "Menlo", "Courier New", "Courier", "Bitstream Vera Sans Mono", "Monaco", monospace, sans-serif;
 }
 
-#js_code {
+#code {
 	width: 100%;
 	white-space: pre;
 }
@@ -100,20 +104,23 @@ pre, code, var, samp, kbd {
 #menu {
 	position: absolute;
 	top: 0;
-	right: 25px;
+	right: 15px;
 	margin: 0;
 	padding: 0;
 	z-index: 1000;
 	list-style: none;
+	font-family: monospace, sans-serif;
 }
 
-#purl, #run, #clear {
+#run, #purl, #clear {
+	width: 2em;
+	height: 2em;
 	background: #FFFFFF;
 	border: 1px solid #C0C0C0;
-	margin: 0.2em 0;
-	padding: 0.2em 0.3em;
-	font-size: 120%;
-	font-weight: bold;
+	margin-bottom: 0.2em;
+	padding: 0.2em;
+	text-align: center;
+	cursor: pointer;
 }
 
 .message {

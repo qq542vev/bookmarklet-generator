@@ -34,7 +34,7 @@ var purl = "https://purl.org/meta/bookmarklet-generator/";
 /**
  * URI path sub delimiters.
  *
- * @constant {object}
+ * @constant {Object.<string, string>}
  * @see {@link https://tools.ietf.org/html/rfc3986#section-3.3}
  */
 var uriPathUnencodeCharacters = {
@@ -126,7 +126,7 @@ function numberFormat(number) {
  * Parse application/x-www-form-urlencoded.
  *
  * @param {string} data URL encoded data
- * @return {object}
+ * @return {Object.<string, string>}
  * @see {@link https://url.spec.whatwg.org/#urlencoded-parsing}
  */
 function parseFormData(data) {
@@ -225,7 +225,7 @@ function outputBookmarklet(jsCode) {
  * Output Messages.
  *
  * @param {string} status Status message
- * @param {array} messages Warning messages
+ * @param {Array.<string>} messages Warning messages
  */
 
 function outputMessage(status, messages) {
