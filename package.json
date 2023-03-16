@@ -8,7 +8,7 @@
     "minify-css": "cleancss -O1 'specialComments:off' 'source/style.css' >'source/minified/style.css'",
     "minify-html": "html-inline -i 'source/index.html' --ignore-links | html-minifier --collapse-whitespace --conservative-collapse --keep-closing-slash --remove-comments >'source/minified/index.html'",
     "minify-js": "browserify 'source/main.js' | uglifyjs --compress >'source/minified/main.js'",
-    "minify-svg": "svgo node_modules/openmoji/color/svg/274C.svg node_modules/openmoji/color/svg/25B6.svg node_modules/openmoji/color/svg/1F517.svg -o source/minified/"
+    "minify-svg": "svgo --multipass node_modules/openmoji/color/svg/274C.svg node_modules/openmoji/color/svg/25B6.svg node_modules/openmoji/color/svg/1F517.svg -o source/minified/"
   },
   "author": "",
   "license": "ISC",
