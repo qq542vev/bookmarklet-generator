@@ -19,4 +19,26 @@
 		* <Bug report at https://github.com/qq542vev/bookmarklet-generator/issues>
 -->
 
-See <https://qq542vev.github.io/bookmarklet-generator/>.
+# Bookmarklet Generator
+
+[Bookmarklet Generator](https://purl.org/meta/bookmarklet-generator/) はブックマークレットの作成を手助けする、Webアプリケーションです。
+
+ * CodeMirror によるコード作成の補助
+   * JavaScript のシンタクッスハイライト
+   * オートインデント
+   * 括弧と引用符の補完
+ * UglifyJS による JavaScript コードの圧縮
+ * ブックマークレットの実行
+ * ブックマークレット毎の共有 URL を提供
+ * URL エンコードする文字を指定可能
+ * [ダウンロード](https://purl.org/meta/bookmarklet-generator/download)すればオフライン環境でも使用可能
+
+# ライセンス
+
+Bookmarklet Generator のライセンスは [LICENSE ファイル](LICENSE)に準じます。但し Bookmarklet Generator 内で使用したライブラリについてはライブラリ提供元のライセンスが適用されます。
+
+ * [Openmoji](https://openmoji.org/) - [ライセンス](licenses/openmoji.txt)
+ * [jQuery](https://jquery.com/) - [ライセンス](licenses/jquery.txt)
+ * [CodeMirror](https://codemirror.net/5/) - [ライセンス](licenses/codemirror.txt)
+ * [normalize.css](https://necolas.github.io/normalize.css/) - [ライセンス](licenses/normalize.css.md)
+ * [UglifyJS](https://lisperator.net/uglifyjs/) - [ライセンス](licenses/uglify-js.txt)
