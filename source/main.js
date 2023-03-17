@@ -338,10 +338,12 @@ $(function() {
 		$.globalEval(jsEditor.doc.getValue());
 	});
 	$("#purl").click(function() {
+		var url = purl + "#" + $("#mainForm").serialize();
+
 		prompt(
 			"Persistent URL of current input status.\nGo to Persistent URL?",
-			purl + "#" + $("#mainForm").serialize()
-		) && (location.href = result);
+			url
+		) && (location.href = url);
 	});
 	$("#clear").click(function() {
 		if(confirm("Do you want to reset the contents of the form?")) {
