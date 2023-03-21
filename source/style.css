@@ -10,8 +10,8 @@
  *
  *   id - 908863f3-0eea-49db-a0c1-513a0b93ddd1
  *   author - <qq542vev at https://purl.org/meta/me/>
- *   version - 1.0.0
- *   date - 2023-03-16
+ *   version - 1.0.1
+ *   date - 2023-03-21
  *   since - 2023-03-13
  *   copyright - Copyright (C) 2023-2023 qq542vev. Some rights reserved.
  *   license - <CC-BY at https://creativecommons.org/licenses/by/4.0/>
@@ -56,6 +56,7 @@ pre, code, var, samp, kbd {
 
 #textarea {
 	margin-bottom: 0.85em;
+	padding-right: 2.4em;
 }
 
 #code, .CodeMirror {
@@ -104,7 +105,7 @@ pre, code, var, samp, kbd {
 #menu {
 	position: absolute;
 	top: 0;
-	right: 15px;
+	right: 0;
 	margin: 0;
 	padding: 0;
 	z-index: 1000;

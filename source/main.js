@@ -3,7 +3,7 @@
 /**
  * @file 「Bookmarklet Generator」用のスクリプト
  * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 2023-03-17
+ * @version 2023-03-21
  * @since 2023-03-13
  * @copyright Copyright (C) 2023-2023 qq542vev. Some rights reserved.
  * @license {@link https://creativecommons.org/licenses/by/4.0/|CC-BY}
@@ -281,10 +281,16 @@ function pageRewrite() {
 		outputBookmarklet($.trim(jsCode));
 	} else if(optimize === "uglifyjs") {
 		try {
-			outputBookmarklet(UglifyJS.minify(jsCode, {
+			var minifed = UglifyJS.minify(jsCode, {
 				"warnings": true,
 				"fromString": true
-			}).code);
+			}).code;
+
+			if(/^!function\(\)\{.*\}\(\);/.test(minifed)) {
+				minifed = "(function(){" + minifed.substring(12, minifed.length - 4) + "})();";
+			}
+
+			outputBookmarklet(minifed);
 		} catch(error) {
 			outputMessage(
 				error.name,
