@@ -42,3 +42,6 @@ Bookmarklet Generator のライセンスは [LICENSE ファイル](LICENSE)に�
  * [CodeMirror](https://codemirror.net/5/) - [ライセンス](licenses/codemirror.txt)
  * [UglifyJS](https://lisperator.net/uglifyjs/) - [ライセンス](licenses/uglify-js.txt)
  * [Openmoji](https://openmoji.org/) - [ライセンス](licenses/openmoji.txt)
+
+https://purl.org/meta/bookmarklet-generator/#code=(function()+%7B%0D%0A%09if(window.clipboardData)+%7B%0D%0A%09%09window.clipboardData.setData('Text'%2C+document.title)%3B%0D%0A%09%7D+else+if(navigator.clipboard)+%7B%0D%0A%09%09navigator.clipboard.writeText(document.title)%3B%0D%0A%09%7D+else+%7B%0D%0A++++++++prompt(%22Select+and+copy+the+text.%22%2C+document.title)%3B%0D%0A++++%7D%0D%0A%7D)()%3B&name=Copy+page+title&optimize=uglifyjs
+
