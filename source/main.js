@@ -3,7 +3,7 @@
 /**
  * @file 「Bookmarklet Generator」用のスクリプト
  * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 2023-03-21
+ * @version 2023-03-26
  * @since 2023-03-13
  * @copyright Copyright (C) 2023-2023 qq542vev. Some rights reserved.
  * @license {@link https://creativecommons.org/licenses/by/4.0/|CC-BY}
