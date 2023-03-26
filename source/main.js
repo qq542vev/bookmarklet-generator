@@ -96,6 +96,8 @@ function addBookmark(url, title) {
 		return window.external.AddFavorite(url, title);
 	} else if(window.sidebar && window.sidebar.addPanel) {
 		return window.sidebar.addPanel(title, url, "");
+	} else {
+		alert("Please add this link to your bookmarks.");
 	}
 
 	return false;
