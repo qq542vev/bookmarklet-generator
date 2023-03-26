@@ -218,7 +218,7 @@ function outputBookmarklet(jsCode) {
 			"rel": "sidebar",
 			"href": uri,
 			"text": name,
-			"onclick": "(function(t,w){var e=w.external,s=w.sidebar;if(e&&e.AddFavorite){e.AddFavorite(t.href,t.title);}else if(s&&s.addPanel){s.addPanel(t.title,t.href,'');}else{alert('Please add this link to your bookmarks.');};return false;})(this,window);"
+			"onclick": "(function(t,w){var e=w.external,s=w.sidebar;if(e&&e.AddFavorite){e.AddFavorite(t.href,t.title);}else if(s&&s.addPanel){s.addPanel(t.title,t.href,'');}else{alert('Please add this link to your bookmarks.');}})(this,window);return false;"
 		})).html()
 	);
 }
