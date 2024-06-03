@@ -23,7 +23,7 @@
     "codemirror": "^5.65.12",
     "jquery": "^3.6.4",
     "normalize.css": "^8.0.1",
-    "openmoji": "^14.0.0",
+    "openmoji": "^15.0.0",
     "uglify-js": "^2.8.29"
   }
 }
