@@ -64,8 +64,8 @@ help:
 	@echo 'TARGET:'
 	@echo '  all     全てのファイルを作成する。'
 	@echo '  clean   作成したファイルを削除する。'
-	@echo '  help    このメッセージを表示する。'
-	@echo '  version バージョン情報を表示する。'
+	@echo '  help    このヘルプを表示して終了する。'
+	@echo '  version バージョン情報を表示して終了する。'
 
 version:
 	@echo '${VERSION}'
