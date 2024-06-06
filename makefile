@@ -1,9 +1,29 @@
 #!/usr/bin/gmake -f
 
+### Script: makefile
+##
+## ファイルを作成する。
+##
+## Metadata:
+##
+##   id - 8ca50b16-73ee-4cfb-9911-a27106e70ca0
+##   author - <qq542vev at https://purl.org/meta/me/>
+##   version - 1.0.1
+##   date - 2024-06-06
+##   since - 2024-06-03
+##   copyright - Copyright (C) 2024-2024 qq542vev. Some rights reserved.
+##   license - <CC-BY at https://creativecommons.org/licenses/by/4.0/>
+##   package - bookmarklet-generator
+##
+## See Also:
+##
+##   * <Project homepage at https://github.com/qq542vev/bookmarklet-generator>
+##   * <Bag report at https://github.com/qq542vev/bookmarklet-generator>
+
 # Macro
 # =====
 
-VERSION = 1.0.0
+VERSION = 1.0.1
 SRC = src
 MIN = minified
 
@@ -36,10 +56,16 @@ clean:
 # =======
 
 help:
-	@echo 'all     全てのファイルを作成する。'
-	@echo 'clean   作成したファイルを削除する。'
-	@echo 'help    このメッセージを表示する。'
-	@echo 'version バージョン情報を表示する。'
+	@echo 'ファイルを作成する。'
+	@echo
+	@echo 'USAGE:'
+	@echo '  make [OPTION...] [TARGET...]'
+	@echo
+	@echo 'TARGET:'
+	@echo '  all     全てのファイルを作成する。'
+	@echo '  clean   作成したファイルを削除する。'
+	@echo '  help    このメッセージを表示する。'
+	@echo '  version バージョン情報を表示する。'
 
 version:
-	@echo ${VERSION}
+	@echo '${VERSION}'
