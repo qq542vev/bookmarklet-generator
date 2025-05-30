@@ -1,6 +1,8 @@
 #!/usr/bin/env xdg-open
+
 [Desktop Entry]
-Type=Link
+Type=Application
 Version=1.5
 Name=Bookmarklet Generator
-URL=https://purl.org/meta/bookmarklet-generator/
+Exec=xdg-open https://purl.org/meta/bookmarklet-generator/
+Terminal=false
