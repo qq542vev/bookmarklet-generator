@@ -8,7 +8,7 @@
 ##
 ##   id - 8ca50b16-73ee-4cfb-9911-a27106e70ca0
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 1.1.0
+##   version - 1.2.0
 ##   created - 2024-06-03
 ##   modified - 2025-05-30
 ##   copyright - Copyright (C) 2024-2024 qq542vev. Some rights reserved.
@@ -31,7 +31,7 @@
 # Macro
 # =====
 
-VERSION = 1.1.0
+VERSION = 1.2.0
 
 SRC = src
 MIN = minified
@@ -65,6 +65,12 @@ ${MIN}/%.svg: ${SRC}/%.svg
 
 run: index.html
 	xdg-open '${<}'
+
+# Docs
+# ====
+
+LICENSE.txt:
+	curl -sS -f -L -o '$(@)' -- 'https://creativecommons.org/licenses/by/4.0/legalcode.txt'
 
 # Clean
 # =====
