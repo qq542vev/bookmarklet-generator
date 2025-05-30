@@ -1,22 +1,22 @@
-<!-- Document: readme.md
+<!-- Document: README.md
 
-	「Bookmarklet Generator」の日本語マニュアル。
+「Bookmarklet Generator」の日本語マニュアル。
 
-	Metadata:
+Metadata:
 
-		id - 6ed745e6-ba1a-4d85-8bdb-046d72d04f51
-		author - <qq542vev at https://purl.org/meta/me/>
-		version - 0.1.0
-		date - 2023-03-26
-		since - 2020-04-20
-		copyright - Copyright (C) 2020-2023 qq542vev. Some rights reserved.
-		license - <CC-BY at https://creativecommons.org/licenses/by/4.0/>
-		package - bookmarklet-generator
+	id - 6ed745e6-ba1a-4d85-8bdb-046d72d04f51
+	author - <qq542vev at https://purl.org/meta/me/>
+	version - 0.1.0
+	created - 2020-04-20
+	modified - 2025-05-30
+	copyright - Copyright (C) 2020-2025 qq542vev. Some rights reserved.
+	license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
+	package - bookmarklet-generator
 
-	See Also:
+See Also:
 
-		* <Project homepage at https://github.com/qq542vev/bookmarklet-generator>
-		* <Bug report at https://github.com/qq542vev/bookmarklet-generator/issues>
+	* <Project homepage at https://github.com/qq542vev/bookmarklet-generator>
+	* <Bug report at https://github.com/qq542vev/bookmarklet-generator/issues>
 -->
 
 # Bookmarklet Generator
@@ -54,7 +54,7 @@
 
 # ライセンス
 
-Bookmarklet Generator のライセンスは [LICENSE ファイル](LICENSE)に準じます。但し Bookmarklet Generator 内で使用したライブラリについてはライブラリ提供元のライセンスが適用されます。
+Bookmarklet Generator のライセンスは [LICENSE ファイル](LICENSE.txt)に準じます。但し Bookmarklet Generator 内で使用したライブラリについてはライブラリ提供元のライセンスが適用されます。
 
  * [normalize.css](https://necolas.github.io/normalize.css/) - [ライセンス](licenses/normalize.css.md)
  * [jQuery](https://jquery.com/) - [ライセンス](licenses/jquery.txt)
