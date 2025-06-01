@@ -1,0 +1,11 @@
+#!/usr/bin/docker-compose -f
+
+services:
+  make:
+    build: .
+    entrypoint: "make"
+    volumes:
+      - .:/work
+      - node_modules:/work/node_modules
+volumes:
+  node_modules:
