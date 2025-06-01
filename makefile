@@ -11,7 +11,7 @@
 ##   version - 1.2.0
 ##   created - 2024-06-03
 ##   modified - 2025-05-30
-##   copyright - Copyright (C) 2024-2024 qq542vev. Some rights reserved.
+##   copyright - Copyright (C) 2024-2025 qq542vev. Some rights reserved.
 ##   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
 ##   depends - browserify, cleancss, echo, html-inline, html-minifier, npx, rm, svgo, tidy, uglifyjs, xdg-open
 ##   package - bookmarklet-generator
