@@ -13,7 +13,7 @@
  *   author - <qq542vev at https://purl.org/meta/me/>
  *   version - 1.0.1
  *   created - 2023-03-13
- *   modified - 2025-06-01
+ *   modified - 2025-06-02
  *   copyright - Copyright (C) 2023-2025 qq542vev. Some rights reserved.
  *   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
  *   package - bookmarklet-generator
@@ -51,7 +51,7 @@ pre, code, var, samp, kbd {
 	word-wrap: break-word;
 }
 
-#mainForm {
+#main-form {
 	position: relative;
 }
 
@@ -60,6 +60,7 @@ pre, code, var, samp, kbd {
 	padding-right: 2.4em;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 #code, .CodeMirror {
 	ime-mode: inactive;
 	font-family: "Source Code Pro", "Ubuntu Mono", "Consolas", "Inconsolata", "Menlo", "Courier New", "Courier", "Bitstream Vera Sans Mono", "Monaco", monospace, sans-serif;
@@ -87,7 +88,7 @@ pre, code, var, samp, kbd {
 	margin-left: 1em;
 }
 
-.checkbox_item {
+.checkbox-item {
 	display: inline-block;
 	margin: 0.2em;
 	padding: 0 0.2em;
@@ -95,7 +96,7 @@ pre, code, var, samp, kbd {
 	cursor: pointer;
 }
 
-.checkbox_item input {
+.checkbox-item input {
 	cursor: pointer;
 }
 
@@ -131,14 +132,14 @@ pre, code, var, samp, kbd {
 	background: #FFF4F6;
 }
 
-#footerNavigation {
+#footer-nav {
 	margin-right: 0;
 	margin-left: 0;
 	padding-right: 0;
 	padding-left: 0;
 }
 
-#footerNavigation li {
+#footer-nav li {
 	display: inline;
 	margin: 0 0.5em;
 }
@@ -151,6 +152,7 @@ pre, code, var, samp, kbd {
 	color: #FF0000;
 }
 
+/* stylelint-disable-next-line block-no-empty */
 .path {
 }
 
@@ -167,7 +169,7 @@ pre, code, var, samp, kbd {
 }
 
 @media print {
-	#submit, #status, #menu, #option, #footerNavigation {
+	#submit, #status, #menu, #option, #footer-nav {
 		display: none;
 	}
 }

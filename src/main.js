@@ -191,7 +191,7 @@ function outputBookmarklet(jsCode) {
 	var iriCharacter = RegExp(uriPathUnencodeCharacters.iri_characters)
 	var percentEncoded = /%[\dA-Fa-f]{2}/;
 
-	$("#bookmarkletURI").attr("title", jsCode).find(".path").empty().append(
+	$("#bookmarklet-uri").attr("title", jsCode).find(".path").empty().append(
 		$.map(path.split(delimiter), function(value) {
 			if(subDelimiter.test(value)) {
 				return $("<span class='sub-delimiter'>").text(value);
@@ -205,14 +205,14 @@ function outputBookmarklet(jsCode) {
 		})
 	);
 
-	$("#normalHtmlCode output").text(
+	$("#normal-html-code output").text(
 		$("<div>").append($("<a>", {
 			"href": uri,
 			"text": name
 		})).html()
 	);
 
-	$("#extendedHtmlCode output").text(
+	$("#extended-html-code output").text(
 		$("<div>").append($("<a>", {
 			"rel": "sidebar",
 			"href": uri,
@@ -276,7 +276,7 @@ function utf8ByteCount(str) {
 function pageRewrite() {
 	var jsCode = jsEditor.doc.getValue();
 	var optimize = $("#optimize").val();
-	location.hash = "#" + $("#mainForm").serialize();
+	location.hash = "#" + $("#main-form").serialize();
 
 	if(optimize === "no") {
 		outputBookmarklet($.trim(jsCode));
@@ -316,7 +316,7 @@ $(function() {
 
 	$.each(query, function(key, value) {
 		if(!key.indexOf("unencode_") && value === "1") {
-			$("#" + key).prop("checked", true);
+			$("#" + key.replace(/_/g, "-")).prop("checked", true);
 		}
 	});
 
@@ -338,14 +338,14 @@ $(function() {
 		pageRewrite();
 	});
 
-	$("#name, #optimize, #mainForm :checkbox").change(pageRewrite);
-	$("#mainForm").submit(false);
+	$("#name, #optimize, #main-form :checkbox").change(pageRewrite);
+	$("#main-form").submit(false);
 
 	$("#run").click(function() {
 		$.globalEval(jsEditor.doc.getValue());
 	});
 	$("#purl").click(function() {
-		var url = purl + "#" + $("#mainForm").serialize();
+		var url = purl + "#" + $("#main-form").serialize();
 
 		prompt(
 			"Persistent URL of current input status.\nGo to Persistent URL?",
@@ -354,7 +354,7 @@ $(function() {
 	});
 	$("#clear").click(function() {
 		if(confirm("Do you want to reset the contents of the form?")) {
-			$("#mainForm").trigger("reset");
+			$("#main-form").trigger("reset");
 			jsEditor.doc.setValue("(function() {\n\n})();");
 			jsEditor.save();
 
@@ -362,9 +362,9 @@ $(function() {
 		}
 	});
 	$("#toggle").click(function() {
-		var checkbox = $("#unencode_characters input:checkbox");
+		var checkbox = $("#unencode-characters input:checkbox");
 
-		checkbox.prop("checked", $("#unencode_characters input:checked").length <= (checkbox.length / 2));
+		checkbox.prop("checked", $("#unencode-characters input:checked").length <= (checkbox.length / 2));
 
 		pageRewrite();
 	});
