@@ -96,9 +96,9 @@ function addBookmark(url, title) {
 		return window.external.AddFavorite(url, title);
 	} else if(window.sidebar && window.sidebar.addPanel) {
 		return window.sidebar.addPanel(title, url, "");
-	} else {
-		alert("Please add this link to your bookmarks.");
 	}
+
+	alert("Please add this link to your bookmarks.");
 
 	return false;
 }
@@ -155,7 +155,6 @@ function outputBookmarklet(jsCode) {
 	var uri = "javascript:" + path;
 	var name = $("#name").val() || "Bookmarkret";
 	var byteCount = numberFormat(utf8ByteCount(uri));
-	var formData = $("#mainForm").serializeArray();
 	document.title = name + " - " + applicationName;
 
 	$("#status output").empty().append(
@@ -231,7 +230,7 @@ function outputBookmarklet(jsCode) {
  */
 
 function outputMessage(status, messages) {
-	var messages = (messages instanceof Array) ? messages : [messages];
+	messages = (messages instanceof Array) ? messages : [messages];
 	var section = $("#messages");
 
 	section.children(".message").remove();
@@ -309,7 +308,7 @@ $(function() {
 
 	$("#code").val(query.code || "(function() {\n\n})();");
 	$("#name").val(query.name);
-	$("#optimize option[value]").each(function(index, element) {
+	$("#optimize option[value]").each(function() {
 		if(this.value === query.optimize) {
 			$("#optimize").val(query.optimize);
 		}

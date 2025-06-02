@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @import url("../node_modules/normalize.css/normalize.css");
 @import url("../node_modules/codemirror/lib/codemirror.css");
 
@@ -11,10 +12,10 @@
  *   id - 908863f3-0eea-49db-a0c1-513a0b93ddd1
  *   author - <qq542vev at https://purl.org/meta/me/>
  *   version - 1.0.1
- *   date - 2023-03-21
- *   since - 2023-03-13
- *   copyright - Copyright (C) 2023-2023 qq542vev. Some rights reserved.
- *   license - <CC-BY at https://creativecommons.org/licenses/by/4.0/>
+ *   created - 2023-03-13
+ *   modified - 2025-06-01
+ *   copyright - Copyright (C) 2023-2025 qq542vev. Some rights reserved.
+ *   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
  *   package - bookmarklet-generator
  *
  * See Also:
@@ -38,16 +39,16 @@ h1, caption, thead {
 	display: none;
 }
 
+pre, code, var, samp, kbd {
+	font-family: "Source Code Pro", "Ubuntu Mono", "Consolas", "Inconsolata", "Menlo", "Courier New", "Courier", "Bitstream Vera Sans Mono", "Monaco", monospace, sans-serif;
+}
+
 #output pre {
 	border: 1px solid #666666;
 	padding: 0.5em;
 	background: #F0F0F0;
 	white-space: pre-wrap;
 	word-wrap: break-word;
-}
-
-pre, code, var, samp, kbd {
-	font-family: "Source Code Pro", "Ubuntu Mono", "Consolas", "Inconsolata", "Menlo", "Courier New", "Courier", "Bitstream Vera Sans Mono", "Monaco", monospace, sans-serif;
 }
 
 #mainForm {
