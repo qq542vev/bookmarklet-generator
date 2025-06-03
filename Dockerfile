@@ -12,9 +12,9 @@
 ##
 ##   id - 196408bf-60f1-4b77-9e4a-227012c16c84
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 1.0.0
+##   version - 1.0.1
 ##   created - 2025-05-31
-##   modified - 2025-05-31
+##   modified - 2025-06-03
 ##   copyright - Copyright (C) 2025-2025 qq542vev. All rights reserved.
 ##   license - <GNU GPLv3 at https://www.gnu.org/licenses/gpl-3.0.txt>
 ##
@@ -29,7 +29,7 @@ FROM ${BASE}
 
 ARG BASE
 ARG TITLE="Bookmarklet Generator"
-ARG VERSION="1.0.0"
+ARG VERSION="1.0.1"
 ARG WORKDIR="/work"
 
 LABEL org.opencontainers.image.title="${TITLE}"
@@ -50,9 +50,12 @@ COPY package.json package-lock.json ${WORKDIR}
 RUN \
 	apt-get update && \
 	apt-get install -y --no-install-recommends \
-		make nodejs npm && \
+		curl git make nodejs npm tidy && \
+	curl -fsSL -- 'https://git.io/shellspec' | sh -s -- -p '/usr/local' -y && \
 	npm ci && npm cache clean --force && \
+	apt-get purge -y curl git && \
+	apt-get autoremove -y && \
 	apt-get clean && \
 	rm -rf /var/lib/apt-get/lists/*
 
-CMD ["make"]
+CMD ["gmake"]

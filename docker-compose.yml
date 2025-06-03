@@ -1,9 +1,10 @@
 #!/usr/bin/docker-compose -f
 
+name: bookmarklet-generator
 services:
   make:
     build: .
-    entrypoint: "make"
+    entrypoint: "gmake"
     volumes:
       - .:/work
       - node_modules:/work/node_modules
