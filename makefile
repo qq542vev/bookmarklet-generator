@@ -10,10 +10,10 @@
 ##   author - <qq542vev at https://purl.org/meta/me/>
 ##   version - 1.2.0
 ##   created - 2024-06-03
-##   modified - 2025-05-30
+##   modified - 2025-06-03
 ##   copyright - Copyright (C) 2024-2025 qq542vev. Some rights reserved.
 ##   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
-##   depends - browserify, cleancss, echo, html-inline, html-minifier, npx, rm, svgo, tidy, uglifyjs, xdg-open
+##   depends - browserify, cleancss, echo, html-inline, html-minifier, npx, rm, shellspec, svgo, tidy, uglifyjs, xdg-open
 ##   package - bookmarklet-generator
 ##
 ## See Also:
@@ -24,7 +24,7 @@
 # Sp Targets
 # ==========
 
-.PHONY: all run clean rebuild help version
+.PHONY: all run pre-check post-check other-check clean rebuild help version
 
 .SILENT: help version
 
@@ -66,6 +66,18 @@ ${MIN}/%.svg: ${SRC}/%.svg
 run: index.html
 	xdg-open '${<}'
 
+# Check
+# =====
+
+pre-check:
+	shellspec -- 'spec/pre'
+
+post-check: index.html
+	shellspec -- 'spec/post'
+
+other-check:
+	shellspec -- 'spec/other'
+
 # Docs
 # ====
 
@@ -92,6 +104,12 @@ help:
 	echo 'TARGET:'
 	echo '  all     全てのファイルを作成する。'
 	echo '  run     メインのファイルを開く。'
+	echo '  pre-check'
+	echo '	  ビルド前の検査を行う。'
+	echo '  post-check'
+	echo '	  ビルド後の検査を行う。'
+	echo '  other-check'
+	echo '	  その他の検査を行う。'
 	echo '  clean   作成したファイルを削除する。'
 	echo '  rebuild cleanの実行後にallを実行する。'
 	echo '  help    このヘルプを表示して終了する。'
