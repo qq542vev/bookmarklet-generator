@@ -3,15 +3,15 @@
 /**
  * @file 「Bookmarklet Generator」用のスクリプト
  * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 2023-03-26
+ * @version 2025-07-26
  * @since 2023-03-13
- * @copyright Copyright (C) 2023-2023 qq542vev. Some rights reserved.
- * @license {@link https://creativecommons.org/licenses/by/4.0/|CC-BY}
+ * @copyright Copyright (C) 2023-2025 qq542vev. Some rights reserved.
+ * @license {@link https://creativecommons.org/licenses/by/4.0/|CC-BY-4.0}
  * @see {@link https://github.com/qq542vev/bookmarklet-generator|Project homepage}
  * @see {@link https://github.com/qq542vev/bookmarklet-generator/issues|Bug report}
  */
 
-var $ = require("jquery");
+var $ = require("jquery/dist/jquery.slim");
 var UglifyJS = require("uglify-js");
 var CodeMirror = require("codemirror");
 require("../node_modules/codemirror/mode/javascript/javascript");
