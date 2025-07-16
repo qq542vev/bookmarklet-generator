@@ -3,7 +3,7 @@
 /**
  * @file 「Bookmarklet Generator」用のスクリプト
  * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 2025-07-26
+ * @version 2025-07-16
  * @since 2023-03-13
  * @copyright Copyright (C) 2023-2025 qq542vev. Some rights reserved.
  * @license {@link https://creativecommons.org/licenses/by/4.0/|CC-BY-4.0}
@@ -237,7 +237,7 @@ function outputMessage(status, messages) {
 	$("#status output").empty().append(status);
 
 	$.each(messages, function(key, value) {
-		$("<samp>").appendTo($("<pre class='message'>").appendTo(section)).append(value);
+		$("<samp>").appendTo($("<pre class='message' role='alert'>").appendTo(section)).append(value);
 	});
 }
 
