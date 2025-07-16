@@ -11,9 +11,9 @@
  *
  *   id - 908863f3-0eea-49db-a0c1-513a0b93ddd1
  *   author - <qq542vev at https://purl.org/meta/me/>
- *   version - 1.0.1
+ *   version - 1.0.2
  *   created - 2023-03-13
- *   modified - 2025-06-02
+ *   modified - 2025-07-17
  *   copyright - Copyright (C) 2023-2025 qq542vev. Some rights reserved.
  *   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
  *   package - bookmarklet-generator
@@ -26,7 +26,6 @@
 
 body {
 	width: 95%;
-	margin: 0 auto;
 	margin: 15px auto;
 	line-height: 1.6;
 }
@@ -88,9 +87,17 @@ pre, code, var, samp, kbd {
 	margin-left: 1em;
 }
 
-.checkbox-item {
+#unencode-characters ul {
+	margin: 0;
+	padding: 0;
+}
+
+#unencode-characters li {
 	display: inline-block;
 	margin: 0.2em;
+}
+
+.checkbox-item {
 	padding: 0 0.2em;
 	background: #F0F0F0;
 	cursor: pointer;

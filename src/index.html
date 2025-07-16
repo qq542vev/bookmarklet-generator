@@ -12,18 +12,17 @@
 		<meta name="author" property="dc11:creator" content="qq542vev" />
 		<meta name="copyright" property="dc11:rights" content="Copyright © 2019-2025 qq542vev. Some rights reserved." />
 		<meta name="dcterms.created" property="dcterms:created" datatype="dcterms:W3CDTF" content="2019-04-12" />
-		<meta name="dcterms.modified" property="dcterms:modified" datatype="dcterms:W3CDTF" content="2025-06-02" />
+		<meta name="dcterms.modified" property="dcterms:modified" datatype="dcterms:W3CDTF" content="2025-07-16" />
 		<meta name="keywords" property="schema:keywords" content="JavaScript,Bookmarklet,Generator" />
-		<meta name="msapplication-starturl" content="?" />
 		<meta name="robots" content="index,follow" />
-		<meta name="version" property="schema:version" content="1.1.3" />
+		<meta name="version" property="schema:version" content="1.1.5" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<title property="dcterms:title">Bookmarklet Generator Version 1.1.3</title>
+		<title property="dcterms:title">Bookmarklet Generator Version 1.1.5</title>
 
-		<link rel="canonical owl:sameAs" href="https://purl.org/bookmarklet-generator/" />
+		<link rel="canonical owl:sameAs" href="https://purl.org/meta/bookmarklet-generator/" />
 		<link rel="author dcterms:creator" href="https://purl.org/meta/me/" />
-		<link rel="start" title="Start page" href="?" />
+		<link rel="start" title="Start page" href="#" />
 		<link rel="copyright license" title="Creative Commons License" href="https://creativecommons.org/licenses/by/4.0/" />
 		<link rel="dcterms:conformsTo" title="Valid HTML+RDFa 1.1" href="http://www.w3.org/TR/html-rdfa/" />
 		<link rel="profile grddl:profileTransformation" href="http://ns.inria.fr/grddl/rdfa/" />
@@ -68,63 +67,95 @@
 							<tr id="unencode-characters">
 								<th scope="row">Unencode Characters</th>
 								<td>
-									<label class="checkbox-item" for="unencode-exclamation-mark" title="Exclamation mark">
-										<input id="unencode-exclamation-mark" type="checkbox" name="unencode_exclamation_mark" value="1" />
-										<code>!</code>
-									</label>
-									<label class="checkbox-item" for="unencode-dollar-sign" title="Dollar sign">
-										<input id="unencode-dollar-sign" type="checkbox" name="unencode_dollar_sign" value="1" />
-										<code>$</code>
-									</label>
-									<label class="checkbox-item" for="unencode-ampersand" title="Ampersand">
-										<input id="unencode-ampersand" type="checkbox" name="unencode_ampersand" value="1" />
-										<code>&amp;</code>
-									</label>
-									<label class="checkbox-item" for="unencode-apostrophe" title="Apostrophe">
-										<input id="unencode-apostrophe" type="checkbox" name="unencode_apostrophe" value="1" />
-										<code>'</code>
-									</label>
-									<label class="checkbox-item" for="unencode-left-parenthesis" title="Left parenthesis">
-										<input id="unencode-left-parenthesis" type="checkbox" name="unencode_left_parenthesis" value="1" />
-										<code>(</code>
-									</label>
-									<label class="checkbox-item" for="unencode-right-parenthesis" title="Right parenthesis">
-										<input id="unencode-right-parenthesis" type="checkbox" name="unencode_right_parenthesis" value="1" />
-										<code>)</code>
-									</label>
-									<label class="checkbox-item" for="unencode-asterisk" title="Asterisk">
-										<input id="unencode-asterisk" type="checkbox" name="unencode_asterisk" value="1" />
-										<code>*</code>
-									</label>
-									<label class="checkbox-item" for="unencode-plus-sign" title="Plus sign">
-										<input id="unencode-plus-sign" type="checkbox" name="unencode_plus_sign" value="1" />
-										<code>+</code>
-									</label>
-									<label class="checkbox-item" for="unencode-comma" title="Comma">
-										<input id="unencode-comma" type="checkbox" name="unencode_comma" value="1" />
-										<code>,</code>
-									</label>
-									<label class="checkbox-item" for="unencode-semicolon" title="Semicolon">
-										<input id="unencode-semicolon" type="checkbox" name="unencode_semicolon" value="1" />
-										<code>;</code>
-									</label>
-									<label class="checkbox-item" for="unencode-equals-sign" title="Equals sign">
-										<input id="unencode-equals-sign" type="checkbox" name="unencode_equals_sign" value="1" />
-										<code>=</code>
-									</label>
-									<label class="checkbox-item" for="unencode-colon" title="Colon">
-										<input id="unencode-colon" type="checkbox" name="unencode_colon" value="1" />
-										<code>:</code>
-									</label>
-									<label class="checkbox-item" for="unencode-commercial-at" title="Commercial at">
-										<input id="unencode-commercial-at" type="checkbox" name="unencode_commercial_at" value="1" />
-										<code>@</code>
-									</label>
-									<label class="checkbox-item" for="unencode-iri-characters" title="IRI Characters">
-										<input id="unencode-iri-characters" type="checkbox" name="unencode_iri_characters" value="1" />
-										<abbr title="Internationalized Resource Identifiers">IRI</abbr> Characters
-									</label>
-									<button id="toggle" type="button" title="All check or all uncheck">toggle☑</button>
+									<ul>
+										<li class="checkbox-item">
+											<label for="unencode-exclamation-mark" title="Exclamation mark">
+												<input id="unencode-exclamation-mark" type="checkbox" name="unencode_exclamation_mark" value="1" />
+												<code>!</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-dollar-sign" title="Dollar sign">
+												<input id="unencode-dollar-sign" type="checkbox" name="unencode_dollar_sign" value="1" />
+												<code>$</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-ampersand" title="Ampersand">
+												<input id="unencode-ampersand" type="checkbox" name="unencode_ampersand" value="1" />
+												<code>&amp;</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-apostrophe" title="Apostrophe">
+												<input id="unencode-apostrophe" type="checkbox" name="unencode_apostrophe" value="1" />
+												<code>'</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-left-parenthesis" title="Left parenthesis">
+												<input id="unencode-left-parenthesis" type="checkbox" name="unencode_left_parenthesis" value="1" />
+												<code>(</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-right-parenthesis" title="Right parenthesis">
+												<input id="unencode-right-parenthesis" type="checkbox" name="unencode_right_parenthesis" value="1" />
+												<code>)</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-asterisk" title="Asterisk">
+												<input id="unencode-asterisk" type="checkbox" name="unencode_asterisk" value="1" />
+												<code>*</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-plus-sign" title="Plus sign">
+												<input id="unencode-plus-sign" type="checkbox" name="unencode_plus_sign" value="1" />
+												<code>+</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-comma" title="Comma">
+												<input id="unencode-comma" type="checkbox" name="unencode_comma" value="1" />
+												<code>,</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-semicolon" title="Semicolon">
+												<input id="unencode-semicolon" type="checkbox" name="unencode_semicolon" value="1" />
+												<code>;</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-equals-sign" title="Equals sign">
+												<input id="unencode-equals-sign" type="checkbox" name="unencode_equals_sign" value="1" />
+												<code>=</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-colon" title="Colon">
+												<input id="unencode-colon" type="checkbox" name="unencode_colon" value="1" />
+												<code>:</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-commercial-at" title="Commercial at">
+												<input id="unencode-commercial-at" type="checkbox" name="unencode_commercial_at" value="1" />
+												<code>@</code>
+											</label>
+										</li>
+										<li class="checkbox-item">
+											<label for="unencode-iri-characters" title="IRI Characters">
+												<input id="unencode-iri-characters" type="checkbox" name="unencode_iri_characters" value="1" />
+												<abbr title="Internationalized Resource Identifiers">IRI</abbr> Characters
+											</label>
+										</li>
+										<li>
+											<button id="toggle" type="button" title="All check or all uncheck">toggle☑</button>
+										</li>
+									</ul>
 								</td>
 							</tr>
 						</tbody>
