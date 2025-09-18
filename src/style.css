@@ -11,9 +11,9 @@
  *
  *   id - 908863f3-0eea-49db-a0c1-513a0b93ddd1
  *   author - <qq542vev at https://purl.org/meta/me/>
- *   version - 1.0.2
+ *   version - 1.0.3
  *   created - 2023-03-13
- *   modified - 2025-07-17
+ *   modified - 2025-09-18
  *   copyright - Copyright (C) 2023-2025 qq542vev. Some rights reserved.
  *   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
  *   package - bookmarklet-generator
@@ -28,6 +28,8 @@ body {
 	width: 95%;
 	margin: 15px auto;
 	line-height: 1.6;
+	background: #FFFFFF;
+	color: #000000;
 }
 
 textarea:focus, input:focus {
