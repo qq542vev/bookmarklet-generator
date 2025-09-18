@@ -8,9 +8,9 @@
 ##
 ##   id - 8ca50b16-73ee-4cfb-9911-a27106e70ca0
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 1.2.0
+##   version - 1.2.1
 ##   created - 2024-06-03
-##   modified - 2025-06-03
+##   modified - 2025-09-18
 ##   copyright - Copyright (C) 2024-2025 qq542vev. Some rights reserved.
 ##   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
 ##   depends - browserify, cleancss, echo, html-inline, html-minifier, npx, rm, shellspec, svgo, tidy, uglifyjs, xdg-open
@@ -24,14 +24,14 @@
 # Sp Targets
 # ==========
 
-.PHONY: all run pre-check post-check other-check clean rebuild help version
+.PHONY: all run pre-check post-check other-check verify clean rebuild help version
 
 .SILENT: help version
 
 # Macro
 # =====
 
-VERSION = 1.2.0
+VERSION = 1.2.1
 
 SRC = src
 MIN = minified
@@ -70,13 +70,15 @@ run: index.html
 # =====
 
 pre-check:
-	shellspec -- 'spec/pre'
+	shellspec --env SPECKIT_FIND_ARGS="-path ./src/*" -- 'spec/pre'
 
 post-check: index.html
-	shellspec -- 'spec/post'
+	shellspec --env SPECKIT_FIND_ARGS="-path ./$(<)" -- 'spec/post'
 
 other-check:
 	shellspec -- 'spec/other'
+
+verify: pre-check post-check other-check
 
 # Docs
 # ====
@@ -110,6 +112,7 @@ help:
 	echo '	  ビルド後の検査を行う。'
 	echo '  other-check'
 	echo '	  その他の検査を行う。'
+	echo '  verify  全ての検査を行う。'
 	echo '  clean   作成したファイルを削除する。'
 	echo '  rebuild cleanの実行後にallを実行する。'
 	echo '  help    このヘルプを表示して終了する。'
