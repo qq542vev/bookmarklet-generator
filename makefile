@@ -8,9 +8,9 @@
 ##
 ##   id - 8ca50b16-73ee-4cfb-9911-a27106e70ca0
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 1.2.1
+##   version - 1.2.2
 ##   created - 2024-06-03
-##   modified - 2025-09-18
+##   modified - 2025-09-19
 ##   copyright - Copyright (C) 2024-2025 qq542vev. Some rights reserved.
 ##   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
 ##   depends - browserify, cleancss, echo, html-inline, html-minifier, npx, rm, shellspec, svgo, tidy, uglifyjs, xdg-open
@@ -31,7 +31,7 @@
 # Macro
 # =====
 
-VERSION = 1.2.1
+VERSION = 1.2.2
 
 SRC = src
 MIN = minified
@@ -84,7 +84,7 @@ verify: pre-check post-check other-check
 # ====
 
 LICENSE.txt:
-	curl -sS -f -L -o '$(@)' -- 'https://creativecommons.org/licenses/by/4.0/legalcode.txt'
+	curl -sS -f -L -o '$(@)' -- 'https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt'
 
 # Clean
 # =====
