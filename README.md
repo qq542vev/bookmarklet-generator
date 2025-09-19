@@ -12,6 +12,7 @@ Metadata:
 	copyright - Copyright (C) 2020-2025 qq542vev. Some rights reserved.
 	license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
 	package - bookmarklet-generator
+	conforms-to - <https://spec.commonmark.org/current/>
 
 See Also:
 
