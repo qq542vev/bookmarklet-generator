@@ -7,7 +7,16 @@
 	},
 	"license": "CC-BY-SA-4.0",
 	"keywords": [
-		"bookmarklet"
+		"bookmarklet",
+		"free-software",
+		"html-application",
+		"generator",
+		"html",
+		"javascript",
+		"offline-first",
+		"onefile",
+		"single-file",
+		"static-web-app"
 	],
 	"description": "JavaScriptによるブックマークレットの作成を支援するWebアプリケーション。",
 	"homepage": "https://purl.org/meta/bookmarklet-generator/",
