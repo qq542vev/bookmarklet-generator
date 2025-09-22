@@ -2,13 +2,15 @@
 
 /**
  * @file 「Bookmarklet Generator」用のスクリプト
- * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 2025-07-16
- * @since 2023-03-13
+ * @author qq542vev
+ * @version 1.0.0
  * @copyright Copyright (C) 2023-2025 qq542vev. Some rights reserved.
- * @license {@link https://creativecommons.org/licenses/by/4.0/|CC-BY-4.0}
+ * @license CC-BY-4.0
  * @see {@link https://github.com/qq542vev/bookmarklet-generator|Project homepage}
  * @see {@link https://github.com/qq542vev/bookmarklet-generator/issues|Bug report}
+ * @dcterms:created 2023-03-13
+ * @dcterms:modified 2025-09-23
+ * @dcterms:conformsTo https://262.ecma-international.org/
  */
 
 var $ = require("jquery/dist/jquery.slim");
@@ -20,12 +22,11 @@ require("../node_modules/codemirror/addon/edit/closebrackets");
 require("../node_modules/codemirror/addon/edit/trailingspace");
 require("../node_modules/codemirror/addon/selection/active-line");
 
-var jsEditor;
+var jsEditor = null;
 var applicationName = document.title;
 
 /**
  * Persistent URL of service.
- *
  * @constant {string}
  * @see {@link https://purl.org/}
  */
@@ -33,8 +34,7 @@ var purl = "https://purl.org/meta/bookmarklet-generator/";
 
 /**
  * URI path sub delimiters.
- *
- * @constant {Object.<string, string>}
+ * @constant {{[key: string]: string}}
  * @see {@link https://tools.ietf.org/html/rfc3986#section-3.3}
  */
 var uriPathUnencodeCharacters = {
@@ -86,10 +86,9 @@ var uriPathUnencodeCharacters = {
 
 /**
  * Add bookmark.
- *
  * @param {string} url Bookmark URL
  * @param {string} title Bookmark title
- * @return {boolean}
+ * @returns {boolean}
  */
 function addBookmark(url, title) {
 	if(window.external && window.external.AddFavorite) {
@@ -105,9 +104,8 @@ function addBookmark(url, title) {
 
 /**
  * Decode application/x-www-form-urlencoded.
- *
  * @param {string} str String
- * @return {string}
+ * @returns {string}
  * @see {@link https://url.spec.whatwg.org/#percent-decode}
  */
 function decodeFormData(str) {
@@ -116,9 +114,8 @@ function decodeFormData(str) {
 
 /**
  * Number Format.
- *
  * @param {number} number Number
- * @return {string}
+ * @returns {string} formated number
  */
 function numberFormat(number) {
 	return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
@@ -126,9 +123,8 @@ function numberFormat(number) {
 
 /**
  * Parse application/x-www-form-urlencoded.
- *
  * @param {string} data URL encoded data
- * @return {Object.<string, string>}
+ * @returns {{[key: string]: string}}
  * @see {@link https://url.spec.whatwg.org/#urlencoded-parsing}
  */
 function parseFormData(data) {
@@ -145,7 +141,6 @@ function parseFormData(data) {
 
 /**
  * Output Bookmarklet URL.
- *
  * @param {string} jsCode Compressed JavaScript code
  */
 function outputBookmarklet(jsCode) {
@@ -188,7 +183,7 @@ function outputBookmarklet(jsCode) {
 	var subDelimiter = RegExp($.map(uriPathUnencodeCharacters, function(value, key) {
 		return key === "iri_characters" ? null : value;
 	}).join("|"));
-	var iriCharacter = RegExp(uriPathUnencodeCharacters.iri_characters)
+	var iriCharacter = RegExp(uriPathUnencodeCharacters.iri_characters);
 	var percentEncoded = /%[\dA-Fa-f]{2}/;
 
 	$("#bookmarklet-uri").attr("title", jsCode).find(".path").empty().append(
@@ -224,11 +219,9 @@ function outputBookmarklet(jsCode) {
 
 /**
  * Output Messages.
- *
  * @param {string} status Status message
  * @param {Array.<string>} messages Warning messages
  */
-
 function outputMessage(status, messages) {
 	messages = (messages instanceof Array) ? messages : [messages];
 	var section = $("#messages");
@@ -243,10 +236,9 @@ function outputMessage(status, messages) {
 
 /**
  * URI percent encode.
- *
  * @param {string} str String
  * @param {string} unencodeChar Unencoded characters of regular expression pattern
- * @return {string}
+ * @returns {string} encoded URI
  * @see {@link https://tools.ietf.org/html/rfc3986#section-2.1}
  */
 function uriPercentEncode(str, unencodeChar) {
@@ -261,9 +253,8 @@ function uriPercentEncode(str, unencodeChar) {
 
 /**
  * Get UTF-8 byte count.
- *
  * @param {string} str - String
- * @return {number}
+ * @returns {number} byte count
  * @see {@link https://www.softel.co.jp/blogs/tech/archives/3318}
  */
 function utf8ByteCount(str) {
@@ -296,7 +287,7 @@ function pageRewrite() {
 			outputMessage(
 				error.name,
 				$.map({"line": "Line", "col": "Col", "pos": "Position"}, function(value, key) {
-					return value + ": " + error[key]
+					return value + ": " + error[key];
 				}).join(", ") + "\n" + error.message
 			);
 		}
