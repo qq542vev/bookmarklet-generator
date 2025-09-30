@@ -8,9 +8,9 @@
 ##
 ##   id - 8ca50b16-73ee-4cfb-9911-a27106e70ca0
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 1.2.2
+##   version - 1.2.3
 ##   created - 2024-06-03
-##   modified - 2025-09-19
+##   modified - 2025-09-30
 ##   copyright - Copyright (C) 2024-2025 qq542vev. Some rights reserved.
 ##   license - <CC-BY-4.0 at https://creativecommons.org/licenses/by/4.0/>
 ##   depends - browserify, cleancss, echo, html-inline, html-minifier, npx, rm, shellspec, svgo, tidy, uglifyjs, xdg-open
@@ -31,7 +31,7 @@
 # Macro
 # =====
 
-VERSION = 1.2.2
+VERSION = 1.2.3
 
 SRC = src
 MIN = minified
@@ -107,11 +107,11 @@ help:
 	echo '  all     全てのファイルを作成する。'
 	echo '  run     メインのファイルを開く。'
 	echo '  pre-check'
-	echo '	  ビルド前の検査を行う。'
+	echo '          ビルド前の検査を行う。'
 	echo '  post-check'
-	echo '	  ビルド後の検査を行う。'
+	echo '          ビルド後の検査を行う。'
 	echo '  other-check'
-	echo '	  その他の検査を行う。'
+	echo '          その他の検査を行う。'
 	echo '  verify  全ての検査を行う。'
 	echo '  clean   作成したファイルを削除する。'
 	echo '  rebuild cleanの実行後にallを実行する。'
