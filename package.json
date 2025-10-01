@@ -1,5 +1,5 @@
 {
-	"name": "bookmarklet_generator",
+	"name": "@qq542vev/bookmarklet-generator",
 	"version": "1.1.6",
 	"author": {
 		"name": "qq542vev",
@@ -45,7 +45,7 @@
 		"markdownlint-cli": "^0.44.0",
 		"normalize.css": "^8.0.1",
 		"openmoji": "^15.1.0",
-		"speckit": "qq542vev/speckit",
+		"speckit": "github:qq542vev/speckit",
 		"stylelint": "^16.20.0",
 		"stylelint-config-standard": "^38.0.0",
 		"svgo": "^3.3.2",
